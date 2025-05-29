@@ -4,9 +4,11 @@ from datetime import datetime
 from django.http import FileResponse
 from django.shortcuts import get_object_or_404
 from django.utils.text import slugify
-
 from django.views.generic import ListView, DetailView
+from rest_framework.viewsets import ModelViewSet
+
 from main.models import CV
+from main.serializers import CVSerializer
 from utils.html_to_pdf import generate_pdf
 
 
@@ -41,3 +43,9 @@ class CVDetailView(DetailView):
     model = CV
     template_name = "main/cv_detail.html"
     context_object_name = "cv"
+
+
+class CVViewSet(ModelViewSet):
+    queryset = CV.objects.all()
+    serializer_class = CVSerializer
+
