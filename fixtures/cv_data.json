@@ -1,0 +1,235 @@
+[
+  {
+    "model": "main.skill",
+    "pk": 1,
+    "fields": {
+      "name": "Python"
+    }
+  },
+  {
+    "model": "main.skill",
+    "pk": 2,
+    "fields": {
+      "name": "Django"
+    }
+  },
+  {
+    "model": "main.skill",
+    "pk": 3,
+    "fields": {
+      "name": "REST"
+    }
+  },
+  {
+    "model": "main.skill",
+    "pk": 4,
+    "fields": {
+      "name": "API"
+    }
+  },
+  {
+    "model": "main.skill",
+    "pk": 5,
+    "fields": {
+      "name": "FastAPI"
+    }
+  },
+  {
+    "model": "main.skill",
+    "pk": 6,
+    "fields": {
+      "name": "React"
+    }
+  },
+  {
+    "model": "main.skill",
+    "pk": 7,
+    "fields": {
+      "name": "JavaScript"
+    }
+  },
+  {
+    "model": "main.skill",
+    "pk": 8,
+    "fields": {
+      "name": "PostgreSQL"
+    }
+  },
+  {
+    "model": "main.skill",
+    "pk": 9,
+    "fields": {
+      "name": "Docker"
+    }
+  },
+  {
+    "model": "main.contact",
+    "pk": 1,
+    "fields": {
+      "email": "stepan@example.com",
+      "phone": "+380681234567",
+      "linkedin": "https://linkedin.com/in/stepan"
+    }
+  },
+  {
+    "model": "main.contact",
+    "pk": 2,
+    "fields": {
+      "email": "olena@example.com",
+      "phone": "+380987654321",
+      "linkedin": "https://linkedin.com/in/olena"
+    }
+  },
+  {
+    "model": "main.contact",
+    "pk": 3,
+    "fields": {
+      "email": "andrii@example.com",
+      "phone": "+380951112233",
+      "linkedin": "https://linkedin.com/in/andrii"
+    }
+  },
+  {
+    "model": "main.contact",
+    "pk": 4,
+    "fields": {
+      "email": "iryna@example.com",
+      "phone": "+380661234567",
+      "linkedin": "https://linkedin.com/in/iryna"
+    }
+  },
+  {
+    "model": "main.project",
+    "pk": 1,
+    "fields": {
+      "name": "Task Manager",
+      "description": "A task manager app using Django.",
+      "link": "https://github.com/OleksiukStepan/task-manager"
+    }
+  },
+  {
+    "model": "main.project",
+    "pk": 2,
+    "fields": {
+      "name": "Web Scraper",
+      "description": "Scraper using Selenium.",
+      "link": "https://github.com/OleksiukStepan/web-scraping-and-data-analysis"
+    }
+  },
+  {
+    "model": "main.project",
+    "pk": 3,
+    "fields": {
+      "name": "Library API",
+      "description": "Team project for managing books.",
+      "link": "https://github.com/OleksiukStepan/library-service-api"
+    }
+  },
+  {
+    "model": "main.project",
+    "pk": 4,
+    "fields": {
+      "name": "Lunch Voting App",
+      "description": "Voting system built with FastAPI.",
+      "link": "https://github.com/OleksiukStepan/lunch-voting-app"
+    }
+  },
+  {
+    "model": "main.project",
+    "pk": 5,
+    "fields": {
+      "name": "Train Station Service",
+      "description": "API for train schedule queries.",
+      "link": "https://github.com/OleksiukStepan/train-station-api-service"
+    }
+  },
+  {
+    "model": "main.cv",
+    "pk": 1,
+    "fields": {
+      "firstname": "Stepan",
+      "lastname": "Oleksiuk",
+      "bio": "Junior Python Developer focused on backend and web scraping.",
+      "contacts": 1,
+      "skills": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "projects": [
+        1,
+        2,
+        3
+      ]
+    }
+  },
+  {
+    "model": "main.cv",
+    "pk": 2,
+    "fields": {
+      "firstname": "Olena",
+      "lastname": "Kovalenko",
+      "bio": "Frontend developer with a passion for clean UI.",
+      "contacts": 2,
+      "skills": [
+        6,
+        7
+      ],
+      "projects": [
+        3,
+        4
+      ]
+    }
+  },
+  {
+    "model": "main.cv",
+    "pk": 3,
+    "fields": {
+      "firstname": "Andrii",
+      "lastname": "Melnyk",
+      "bio": "Full-stack developer with DevOps interest.",
+      "contacts": 3,
+      "skills": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        9
+      ],
+      "projects": [
+        1,
+        4,
+        5
+      ]
+    }
+  },
+  {
+    "model": "main.cv",
+    "pk": 4,
+    "fields": {
+      "firstname": "Iryna",
+      "lastname": "Pavlenko",
+      "bio": "Backend developer focused on RESTful APIs and scalable services.",
+      "contacts": 4,
+      "skills": [
+        1,
+        2,
+        3,
+        4,
+        8,
+        9
+      ],
+      "projects": [
+        1,
+        5
+      ]
+    }
+  }
+]
