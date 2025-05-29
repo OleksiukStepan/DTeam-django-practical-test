@@ -1,6 +1,6 @@
 import pytest
 from django.urls import reverse
-from main.models import CV,Skill, Project, Contact
+from apps.main.models import CV,Skill, Project, Contact
 
 
 @pytest.mark.django_db

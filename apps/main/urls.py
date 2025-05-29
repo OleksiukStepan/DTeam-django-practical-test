@@ -1,7 +1,7 @@
 from django.urls import path
 from rest_framework.routers import DefaultRouter
 
-from main.views import CVListView, CVDetailView, export_cv_pdf, CVViewSet
+from apps.main.views import CVListView, CVDetailView, export_cv_pdf, CVViewSet
 
 router = DefaultRouter()
 router.register(r"api/cv", CVViewSet, basename="cv")

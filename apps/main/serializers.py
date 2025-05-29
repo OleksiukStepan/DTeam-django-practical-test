@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from main.models import CV, Skill, Project, Contact
+from apps.main.models import CV, Skill, Project, Contact
 
 
 class SkillSerializer(serializers.ModelSerializer):

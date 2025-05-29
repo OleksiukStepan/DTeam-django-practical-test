@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -40,8 +40,9 @@ INSTALLED_APPS = [
     # 3d apps
     "rest_framework",
     # my apps
-    "main",
-    "audit",
+    "apps.main",
+    "apps.audit",
+    "apps.settingsinfo",
 ]
 
 MIDDLEWARE = [
@@ -52,21 +53,24 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "audit.middleware.RequestLoggingMiddleware",
+    "apps.audit.middleware.RequestLoggingMiddleware",
 ]
 
 ROOT_URLCONF = "CVProject.urls"
 
+TEMPLATE_DIR = os.path.join(BASE_DIR, "apps/templates")
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / "templates"],
+        "DIRS": [TEMPLATE_DIR],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "apps.settingsinfo.context_processors.settings_context",
             ],
         },
     },
