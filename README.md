@@ -140,9 +140,10 @@ Complete each task thoroughly, commit your work following the branch-and-merge s
 
 ## Table of Contents
 
-1. [Python Environment Setup](#-python-environment-setup)  
-2. [Database Setup & Fixture Data](#-database-setup--fixture-data)  
-3. [Running Tests](#-running-tests)
+1. [Python Environment Setup](#python-environment-setup)  
+2. [Database Setup & Fixture Data](#database-setup--fixture-data)  
+3. [Running Tests](#3-running-tests)
+4. [Docker Environment Setup](#docker-environment-setup)
 
 
 ## Python Environment Setup
@@ -207,3 +208,41 @@ pytest tests/test_views.py
 
 - Tests are located in the `tests/` folder at the project root.
 - The test database will be created and destroyed automatically during test runs.
+
+
+---
+
+
+### Docker Environment Setup
+
+Before starting the project, copy the example environment file:
+
+```bash
+cp .env.sample .env
+```
+
+Edit the `.env` file with your custom values:
+
+```dotenv
+USE_DOCKER=True               # Set to True if using Docker
+POSTGRES_DB=your_db_name
+POSTGRES_USER=your_username
+POSTGRES_PASSWORD=your_password
+POSTGRES_HOST=postgres_db     # or localhost (if running without Docker)
+POSTGRES_PORT=5432
+```
+
+To build and start the project:
+
+```bash
+docker-compose up --build
+```
+
+The project will be available at:
+
+```
+http://localhost:8000
+```
+
+---
+
