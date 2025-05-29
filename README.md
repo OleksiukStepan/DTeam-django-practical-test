@@ -136,7 +136,16 @@ Complete each task thoroughly, commit your work following the branch-and-merge s
 **Thank you!**
 
 
-## 🛠 Python Environment Setup
+# CV Management API
+
+## Table of Contents
+
+1. [Python Environment Setup](#-python-environment-setup)  
+2. [Database Setup & Fixture Data](#-database-setup--fixture-data)  
+3.
+
+
+## Python Environment Setup
 
 This project uses `pyenv` and `poetry`.
 
@@ -159,12 +168,24 @@ poetry install
 poetry shell
 ```
 
-5. Run the server (after initializing the project):
-```zsh
-python manage.py runserver
-```
-
 ---
 
 Python version is defined in `.python-version`  
 Dependencies are defined in `pyproject.toml` and locked in `poetry.lock`
+
+
+## 🗃 Database Setup & Fixture Data
+
+1. Apply migrations:
+```zsh
+python manage.py makemigrations
+python manage.py migrate
+```
+
+2. Load sample data:
+```zsh
+python manage.py loaddata updated_cv_fixtures.json
+```
+
+---
+
