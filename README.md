@@ -134,3 +134,76 @@ Deploy this project to DigitalOcean or any other VPS. (If you do not have a Digi
 Complete each task thoroughly, commit your work following the branch-and-merge structure, and make sure your `README.md` clearly explains how to install, run, and test everything. We look forward to reviewing your submission!
 
 **Thank you!**
+
+
+# CV Management API
+
+## Table of Contents
+
+1. [Python Environment Setup](#-python-environment-setup)  
+2. [Database Setup & Fixture Data](#-database-setup--fixture-data)  
+3. [Running Tests](#-running-tests)
+
+
+## Python Environment Setup
+
+This project uses `pyenv` and `poetry`.
+
+1. Install pyenv and poetry  
+   (follow official docs: https://github.com/pyenv/pyenv?tab=readme-ov-file#installation, https://python-poetry.org/docs/#installation)
+
+2. Set the Python version:
+```zsh
+pyenv install 3.11.8
+pyenv local 3.11.8
+```
+
+3. Install dependencies:
+```zsh
+poetry install
+```
+
+4. Activate the environment:
+```zsh
+poetry shell
+```
+
+---
+
+Python version is defined in `.python-version`  
+Dependencies are defined in `pyproject.toml` and locked in `poetry.lock`
+
+
+## Database Setup & Fixture Data
+
+1. Apply migrations:
+```zsh
+python manage.py makemigrations
+python manage.py migrate
+```
+
+2. Load sample data:
+```zsh
+python manage.py loaddata updated_cv_fixtures.json
+```
+
+---
+
+
+## 3. Running Tests
+
+This project uses `pytest` with Django integration for testing.  
+Make sure your virtual environment is activated before running tests.
+
+### Run all tests:
+```bash
+pytest
+```
+
+### Run tests from a specific file:
+```bash
+pytest tests/test_views.py
+```
+
+- Tests are located in the `tests/` folder at the project root.
+- The test database will be created and destroyed automatically during test runs.
