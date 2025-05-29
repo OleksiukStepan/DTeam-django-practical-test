@@ -1,6 +1,6 @@
 from django.urls import path
 
-from audit.views import recent_logs_view
+from apps.audit.views import recent_logs_view
 
 
 urlpatterns = [

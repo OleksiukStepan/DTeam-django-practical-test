@@ -1,5 +1,5 @@
 from django.utils.deprecation import MiddlewareMixin
-from audit.models import RequestLog
+from apps.audit.models import RequestLog
 
 
 class RequestLoggingMiddleware(MiddlewareMixin):
