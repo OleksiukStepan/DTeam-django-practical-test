@@ -142,7 +142,7 @@ Complete each task thoroughly, commit your work following the branch-and-merge s
 
 1. [Python Environment Setup](#-python-environment-setup)  
 2. [Database Setup & Fixture Data](#-database-setup--fixture-data)  
-3.
+3. [Running Tests](#-running-tests)
 
 
 ## Python Environment Setup
@@ -174,7 +174,7 @@ Python version is defined in `.python-version`
 Dependencies are defined in `pyproject.toml` and locked in `poetry.lock`
 
 
-## 🗃 Database Setup & Fixture Data
+## Database Setup & Fixture Data
 
 1. Apply migrations:
 ```zsh
@@ -189,3 +189,21 @@ python manage.py loaddata updated_cv_fixtures.json
 
 ---
 
+
+## 3. Running Tests
+
+This project uses `pytest` with Django integration for testing.  
+Make sure your virtual environment is activated before running tests.
+
+### Run all tests:
+```bash
+pytest
+```
+
+### Run tests from a specific file:
+```bash
+pytest tests/test_views.py
+```
+
+- Tests are located in the `tests/` folder at the project root.
+- The test database will be created and destroyed automatically during test runs.
