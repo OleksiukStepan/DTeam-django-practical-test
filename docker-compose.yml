@@ -23,5 +23,26 @@ services:
     ports:
       - "5432:5432"
 
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+
+  celery:
+    build: .
+    command: celery -A CVProject worker --loglevel=info
+    depends_on:
+      - redis
+      - db
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "8025:8025"
+
 volumes:
   postgres_data:

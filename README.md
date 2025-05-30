@@ -142,8 +142,9 @@ Complete each task thoroughly, commit your work following the branch-and-merge s
 
 1. [Python Environment Setup](#python-environment-setup)  
 2. [Database Setup & Fixture Data](#database-setup--fixture-data)  
-3. [Running Tests](#3-running-tests)
+3. [Running Tests](#running-tests)
 4. [Docker Environment Setup](#docker-environment-setup)
+5. [Email Configuration](#email-configuration)
 
 
 ## Python Environment Setup
@@ -191,7 +192,7 @@ python manage.py loaddata updated_cv_fixtures.json
 ---
 
 
-## 3. Running Tests
+## Running Tests
 
 This project uses `pytest` with Django integration for testing.  
 Make sure your virtual environment is activated before running tests.
@@ -213,7 +214,7 @@ pytest tests/test_views.py
 ---
 
 
-### Docker Environment Setup
+## Docker Environment Setup
 
 Before starting the project, copy the example environment file:
 
@@ -246,3 +247,23 @@ http://localhost:8000
 
 ---
 
+
+## Email Configuration
+
+The project uses SMTP to send emails with PDF attachments (e.g., CV export).
+Before sending emails, set the email-related environment variables in your `.env` file.
+
+```dotenv
+EMAIL_BACKEND=django.core.mail.backends.smtp.EmailBackend
+EMAIL_HOST=smtp.gmail.com
+EMAIL_PORT=587
+EMAIL_HOST_USER=your_email@gmail.com
+EMAIL_HOST_PASSWORD=your_app_password
+EMAIL_USE_TLS=True
+EMAIL_USE_SSL=False
+DEFAULT_FROM_EMAIL=your_email@gmail.com
+```
+> ⚠️ For Gmail, you must enable **2-Step Verification** and generate an **App Password**.
+
+
+---
