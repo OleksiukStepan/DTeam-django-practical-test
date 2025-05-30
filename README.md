@@ -146,6 +146,7 @@ Complete each task thoroughly, commit your work following the branch-and-merge s
 4. [Docker Environment Setup](#docker-environment-setup)
 5. [Email Configuration](#email-configuration)
 6. [OpenAI Configuration](#openai-configuration)
+7. [Deployment Notes](#deployment-notes)
 
 
 ## Python Environment Setup
@@ -283,5 +284,38 @@ OPENAI_API_KEY=your_key_here
 
 ℹ️ This key is used to translate the CV content into rare languages via the GPT model.
 
+
+---
+
+
+## Deployment Notes
+
+To run the project via Docker in production:
+
+1. Create a `.env` file with required variables (see `.env.example`).
+   - Make sure to set:
+     - `USE_DOCKER=True`
+     - `ALLOWED_HOSTS=your_domain_or_server_ip`
+
+2. Copy project to the server (from your local machine):
+   ```bash
+   scp -r DTeam-django-practical-test root@your_ip:~/
+   ```
+
+3. SSH into the server:
+   ```bash
+   ssh root@your_ip
+   ```
+
+4. Navigate into the project and start Docker:
+   ```bash
+   cd DTeam-django-practical-test
+   docker-compose up -d --build
+   ```
+
+5. (Optional) Load initial data (fixtures) into the database:
+   ```bash
+   docker exec -it <web_container_name> python manage.py loaddata your_fixture.json
+   ```
 
 ---
