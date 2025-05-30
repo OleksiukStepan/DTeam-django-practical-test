@@ -145,6 +145,7 @@ Complete each task thoroughly, commit your work following the branch-and-merge s
 3. [Running Tests](#running-tests)
 4. [Docker Environment Setup](#docker-environment-setup)
 5. [Email Configuration](#email-configuration)
+6. [OpenAI Configuration](#openai-configuration)
 
 
 ## Python Environment Setup
@@ -264,6 +265,23 @@ EMAIL_USE_SSL=False
 DEFAULT_FROM_EMAIL=your_email@gmail.com
 ```
 > ⚠️ For Gmail, you must enable **2-Step Verification** and generate an **App Password**.
+
+
+---
+
+
+## OpenAI Configuration
+
+To enable CV translation via OpenAI:
+
+1. Get your API key from [https://platform.openai.com/account/api-keys](https://platform.openai.com/account/api-keys)
+2. Add the key to your `.env` file:
+
+```env
+OPENAI_API_KEY=your_key_here
+```
+
+ℹ️ This key is used to translate the CV content into rare languages via the GPT model.
 
 
 ---
