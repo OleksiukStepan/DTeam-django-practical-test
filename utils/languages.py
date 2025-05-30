@@ -1,0 +1,6 @@
+TRANSLATION_LANGUAGES = [
+    "Cornish", "Manx", "Breton", "Inuktitut", "Kalaallisut",
+    "Romani", "Occitan", "Ladino", "Northern Sami", "Upper Sorbian",
+    "Kashubian", "Zazaki", "Chuvash", "Livonian", "Tsakonian",
+    "Saramaccan", "Bislama",
+]
