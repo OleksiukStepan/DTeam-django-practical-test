@@ -1,7 +1,14 @@
 from django.urls import path
 from rest_framework.routers import DefaultRouter
 
-from apps.main.views import CVListView, CVDetailView, export_cv_pdf, CVViewSet
+from apps.main.views import (
+    export_cv_pdf,
+    send_cv_pdf_view,
+    CVListView,
+    CVDetailView,
+    CVViewSet,
+)
+
 
 router = DefaultRouter()
 router.register(r"api/cv", CVViewSet, basename="cv")
@@ -10,6 +17,7 @@ urlpatterns = [
     path("", CVListView.as_view(), name="cv_list"),
     path("cv/<int:pk>/", CVDetailView.as_view(), name="cv_detail"),
     path("cv/<int:pk>/pdf/", export_cv_pdf, name="cv_pdf"),
+    path("cv/<int:pk>/send/", send_cv_pdf_view, name="send_cv_pdf"),
 ]
 
 urlpatterns += router.urls
