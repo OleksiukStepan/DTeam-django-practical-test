@@ -315,7 +315,7 @@ To run the project via Docker in production:
 
 5. (Optional) Load initial data (fixtures) into the database:
    ```bash
-   docker exec -it <web_container_name> python manage.py loaddata your_fixture.json
+   docker exec -it <web_container_name> python manage.py loaddata fixtures/cv_data.json
    ```
 
 ---
